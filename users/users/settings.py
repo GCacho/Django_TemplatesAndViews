@@ -55,7 +55,7 @@ ROOT_URLCONF = 'users.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/home/cacho/pildoras-django/users/templates'], # La ruta a las plantillas
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
