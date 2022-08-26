@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <h1>Hola Mundo, corriendo el documento desde una plantilla!</h1>
+        <p>El nombre del profesor es: {{nombre_persona}} {{apellido_persona}}</p>
+        <p>Dia de Registro: {{fecha_actual.day}}/{{fecha_actual.month}}/{{fecha_actual.year}}</p>
+        <p><strong>Temas del curso</strong></p>
+        <ul>
+            {% for tema in temas %}
+                <li>{{tema}}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

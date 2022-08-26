@@ -10,8 +10,8 @@
 ### Run Virtual Enviroment and Django
 - source venv/bin/activate
 - pip install -r requirements.txt 
-- django-admin startproject users
-- python3 manage.py startapp register
+- django-admin startproject users (Solo si no existen previamente)
+- python3 manage.py startapp register (Solo si no existen previamente)
 - python3 manage.py migrate
 ### Run Server
 - python3 manage.py runserver
