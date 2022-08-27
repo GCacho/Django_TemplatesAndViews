@@ -1,32 +1,34 @@
-<html>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
 
-        {# Este es un comentario en Django - Solo en una linea #}
-        {%comment%}
-            Este seria 
-            Un comentario 
-            Multilinea
-        {% endcomment %}
+    <h1>Hola Mundo, corriendo el documento desde una plantilla!</h1>
 
-        <h1>Hola Mundo, corriendo el documento desde una plantilla!</h1>
+    {% include "head/nav.html" %} {# Para incrustar un template dentro de otro template #}
 
-        {% if nombre_persona.capitalize == 'Guillermo' %}
-            <p>El curso esta siendo impartido por el profesor <strong>{{profesor.0}}</strong></p>
-        {% else %}
-            <p>El curso esta siendo impartido por el profesor <strong>{{profesor.1}}</strong></p>
+    {% if nombre_persona.capitalize == 'Guillermo' %}
+        <p>El curso esta siendo impartido por el profesor <strong>{{profesor.0}}</strong></p>
+    {% else %}
+        <p>El curso esta siendo impartido por el profesor <strong>{{profesor.1}}</strong></p>
+    {% endif %}
+
+    <p>El nombre del profesor es: {{nombre_persona.capitalize}} {{apellido_persona.capitalize}}</p> <!--Los metodos se mandan a llamar sin los parentesis () en este caso capitalize -->
+    <p>Dia de Registro: {{fecha_actual.day}}/{{fecha_actual.month}}/{{fecha_actual.year}}</p>
+    <p><strong>Temas del curso</strong></p>
+    <ul>
+        {% if temas %}
+            {% for tema in temas %}
+                <li>{{tema.capitalize}}</li>
+            {% endfor %}
+        {% else %} <!--Si no hay elementos para mostrar enviar el siguiente mensaje -->
+            <p>No hay elementos para mostrar</p>
         {% endif %}
-
-        <p>El nombre del profesor es: {{nombre_persona.capitalize}} {{apellido_persona.capitalize}}</p> <!--Los metodos se mandan a llamar sin los parentesis () en este caso capitalize -->
-        <p>Dia de Registro: {{fecha_actual.day}}/{{fecha_actual.month}}/{{fecha_actual.year}}</p>
-        <p><strong>Temas del curso</strong></p>
-        <ul>
-            {% if temas %}
-                {% for tema in temas %}
-                    <li>{{tema.upper}}</li>
-                {% endfor %}
-            {% else %} <!--Si no hay elementos para mostrar enviar el siguiente mensaje -->
-                <p>No hay elementos para mostrar</p>
-            {% endif %}
-        </ul>
-    </body>
+    </ul>
+</body>
 </html>
